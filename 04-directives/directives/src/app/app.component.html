@@ -1,0 +1,73 @@
+<!-- ------------------ affiche si la condition est vrai ------------------- -->
+
+<!-- <div *ngIf="list.length ==0">il n'y aucun élément dans la liste</div>
+<div *ngIf="list.length > 0">il y a {{list.length}} éléments dans la liste</div> -->
+
+<!-- ------------------- masque si la condition est vrai ------------------- -->
+
+<!-- <div [hidden]="list.length > 0">il n'y aucun élément dans la liste</div>
+<div [hidden]="list.length == 0">il y a {{list.length}} éléments dans la liste</div> -->
+
+<!-- attention on doit inverser les consitions avec [hidden] -->
+
+<!-- --------------------------- avec if & else ---------------------------- -->
+
+<!-- <div *ngIf="list.length == 0 else yesListe">Il n'y a aucun élément dans la liste</div>
+<ng-template #yesListe>il y a {{list.length}} éléments dans la liste</ng-template> -->
+<!-- le ng-template, n'y a plus de balise dans le html -->
+
+
+<!-- <div *ngIf='list.length == 0 then noList else yesList'></div>
+
+<ng-template #yesList>
+  <div>Il n'y a aucun élément dans la liste</div>
+</ng-template>
+<ng-template #noList>
+  <div>il y a {{list.length}} éléments dans la liste</div>
+</ng-template> -->
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ------------------------------ ngswitch ------------------------------- -->
+
+<!-- 
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a href="#" class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map view</a>
+    <a href="#" class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List view</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">MAP view Lorem ipsum dolor sit amet.</div>
+  <div *ngSwitchCase="'list'">LIST Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, reprehenderit?
+  </div>
+  <div *ngSwitchDefault>Rien à afficher</div>
+</div> -->
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- -------------------------------- ngFor -------------------------------- -->
+
+<!-- <ul>
+  <li *ngFor="let c of courses">{{c.name}}</li>
+</ul> -->
+
+<!-- <ul>
+  <li *ngFor="let c of courses; index as i">{{i}} {{c.name}}</li>
+</ul> -->
+
+<!-- <ul>
+  <li *ngFor="let c of courses; even as isEven">{{c.name}} <span *ngIf='isEven'>*</span></li>
+</ul> -->
+
+<button (click)="onAdd()">Add</button>
+<button (click)="onLoad()">Load</button>
+<ul>
+  <li *ngFor="let c of courses; trackBy : trackCourse">{{c.name}}
+    <button (click)="onChange(c)">change</button>
+    <button (click)="onRemove(c)">remove</button>
+  </li>
+</ul>
