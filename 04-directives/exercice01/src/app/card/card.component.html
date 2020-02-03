@@ -1,0 +1,38 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-header" (click)="hidden()">
+    {{title}}
+    <fa-icon [icon]="isHidden? faCaretLeft : faSortDown"></fa-icon>
+  </div>
+
+  <div class="list-group-item" [hidden]="isHidden">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed
+    <ng-content></ng-content>
+  </div>
+
+
+</div>
+
+<!-- <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Featured
+    <fa-icon [icon]="isHidden? faCaretLeft : faSortDown" (click)="hiddenNext()"></fa-icon>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item hidden">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas sed
+      dolor atque
+      maiores
+      placeat molestias. Animi nisi, consectetur vitae natus distinctio nam dolore hic sit consequatur? Quidem
+      exercitationem excepturi in debitis voluptate dignissimos maiores aut ex odit asperiores quod consequatur incidunt
+      ullam officiis, possimus aspernatur reprehenderit corrupti molestias dicta quas voluptates voluptatum ut modi!
+      Perferendis, illo recusandae fugit dolores voluptatum, sit porro quo eligendi adipisci earum autem atque sapiente
+      cupiditate dolore eveniet assumenda molestias consequuntur commodi voluptatem iste! Vitae, itaque. Ratione nulla
+      modi officia blanditiis ipsum eum quasi, aut fugit unde nobis. Eos, repellendus perferendis labore eius pariatur
+      odit quaerat numquam, error reiciendis hic iusto nemo voluptate omnis blanditiis ullam quisquam recusandae
+      explicabo nam vel dolor porro quam fugit? Labore numquam sint quas nam, consequatur non officiis magni ullam cum
+      explicabo? Odit ut nihil exercitationem vero vel hic molestiae esse nulla modi? Eveniet totam odio culpa iusto
+      excepturi asperiores explicabo nesciunt recusandae illum qui. Magnam, eligendi? Deleniti temporibus consequatur
+      ipsam nulla ipsa! Fugiat vitae unde maxime facilis, consectetur neque aliquam fugit nam nulla eligendi! Quo
+      asperiores nisi consectetur deserunt inventore illum amet vero laborum aperiam sed animi, sit porro id laboriosam
+      harum distinctio, consequuntur ipsa? Incidunt adipisci deserunt numquam culpa.</li>
+
+  </ul>
+</div> -->

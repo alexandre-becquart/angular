@@ -1,0 +1,32 @@
+<form #f="ngForm" (ngSubmit)="submit(f)" method="POST">
+  <div class="form-group">
+    <label for="name">Course Name</label>
+    <input required minlength="5" #name="ngModel" ngModel type="text" name="name" id="name" class="form-control">
+    <div *ngIf="!name.valid && name.touched" class="alert alert-danger">
+      <div *ngIf="name.errors.required"> Ce champs est obligatoire</div>
+      <div *ngIf="name.errors.minlength"> Il faut minimum {{name.errors.minlength.requiredLength}}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select ngModel name="category" id="category" class="form-control">
+      <!-- <option value="dev">Développement</option>
+      <option value="art">Art</option>
+      <option value="lit">Liétérature</option> -->
+
+      <!-- <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option> -->
+      <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
+
+
+    </select>
+  </div>
+  <div class="form-group form-check">
+    <input ngModel name="rgpd" type="checkbox" id="rgpd" value="rgpd" class="form-check-input">
+    <label for="rgpd" class="form-check-label">RGPD</label>
+  </div>
+
+  <p>{{f.value | json}}</p>
+
+  <button class="btn btn-primary" [disabled]="f.invalid">Create</button>
+
+</form>

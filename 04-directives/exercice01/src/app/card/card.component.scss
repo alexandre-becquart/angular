@@ -1,0 +1,28 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+.card-header {
+  line-height: 20px;
+  align-items: center;
+  align-content: center;
+}
+
+
+fa-icon {
+  margin-left: 220px;
+  font-size: 1.2em;
+}
+
+.hidden {
+  display: none;
+  height: 0;
+  //   opacity: 0;
+  transition: height 0.3s ease;
+}
+
+.view {
+  display: block;
+  min-height: 500px;
+  //   opacity: 1;
+  transition: height 0.3s ease;
+}

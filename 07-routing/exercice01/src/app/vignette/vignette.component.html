@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;" *ngFor='let f of followers'>
+  <img class="card-img-top" [src]="f.avatar_url" [alt]="f.login">
+  <div class="card-body">
+    <h5 class="card-title">{{f.login}}</h5>
+    <p class="card-text">{{f.subscriptions_url}}
+    </p>
+    <a href="#" class="btn btn-primary">Go details</a>
+  </div>
+</div>

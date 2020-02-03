@@ -33,7 +33,7 @@ export class AppComponent {
   }
 
   trackCourse(index, course) {
-    return course ? course.id : undefined
+    course ? course.id : undefined
   }
 
   onAdd() {
@@ -49,4 +49,10 @@ export class AppComponent {
   onChange(c) {
     c.name = "change!"
   }
+
+  /* -------------------------------- ng class -------------------------------- */
+
+  isSelected = true;
+  isActive = true;
+
 }

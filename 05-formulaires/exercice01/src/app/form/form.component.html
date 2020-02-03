@@ -1,0 +1,69 @@
+<form #f="ngForm" (ngSubmit)="submit(f)" method="POST">
+  <div class="form-group">
+    <label for="fName">Firstname</label>
+
+    <input required minlength="5" ngModel #fName="ngModel" type="text" name="fname" id="fName" class="form-control"
+      pattern="[a-zA-Z]*">
+
+    <div *ngIf="!fName.valid && fName.touched" class="alert alert-danger">
+      <div *ngIf="fName.errors.required"> Ce champs est obligatoire</div>
+      <div *ngIf="fName.errors.minlength"> Il faut minimum {{fName.errors.minlength.requiredLength}}</div>
+      <div *ngIf="fName.errors.pattern"> Il ne faut que des lettres</div>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="lName">Lastname</label>
+    <input required minlength="5" #lName="ngModel" ngModel type="text" name="lName" id="lName" class="form-control"
+      pattern="[a-zA-Z ]*">
+    <div *ngIf="!lName.valid && lName.touched" class="alert alert-danger">
+      <div *ngIf="lName.errors.required"> Ce champs est obligatoire</div>
+      <div *ngIf="lName.errors.minlength"> Il faut minimum {{lName.errors.minlength.requiredLength}}</div>
+      <div *ngIf="lName.errors.pattern"> Il ne faut que des lettres</div>
+
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="textAera">Votre texte</label>
+    <textarea ngModel #textAera="ngModel" required minlength="10" name="textAera" id="textAera"
+      class="form-control"></textarea>
+    <div *ngIf="!textAera.valid && textAera.touched" class="alert alert-danger">
+      <div *ngIf="textAera.errors.required"> Ce champs est obligatoire</div>
+      <div *ngIf="textAera.errors.minlength"> Il faut minimum {{textAera.errors.minlength.requiredLength}}</div>
+
+    </div>
+
+  </div>
+
+  <div class="form-group form-check">
+    <input ngModel name="newsletter" type="checkbox" id="newsletter" value="newsletter" class="form-check-input"
+      checked>
+    <label for="newsletter" class="form-check-label">newsletter</label>
+  </div>
+
+  Contact method
+  <div class="form-group form-check" *ngFor="let method of contactMethods">
+    <input ngModel #contactmethod="ngModel" name="contactMethod" type="radio" [value]="method.value"
+      class="form-check-input">
+    <label for="contactMethod{{method.id}}" class="form-check-label">{{method.name}}</label>
+  </div>
+  <!-- <div class=" form-group form-check">
+      <input ngModel #contactmethod="ngModel" name="contactMethod" type="radio" id="tel" [value]="method.value"
+        class="form-check-input">
+      <label for="tel" class="form-check-label">{{method.name}}</label>
+  </div>
+  <div class="form-group form-check">
+    <input ngModel #contactmethod="ngModel" name="contactMethod" type="radio" id="sms" [value]="method.value"
+      class="form-check-input">
+    <label for="tel" class="form-check-label">{{method.name}}</label>
+  </div> -->
+
+
+
+  <button class="btn btn-primary" [disabled]="f.invalid">Create</button>
+
+
+  <p>{{f.value | json}}</p>
+
+</form>

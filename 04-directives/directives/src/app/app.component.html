@@ -63,11 +63,43 @@
   <li *ngFor="let c of courses; even as isEven">{{c.name}} <span *ngIf='isEven'>*</span></li>
 </ul> -->
 
-<button (click)="onAdd()">Add</button>
+<!-- <button (click)="onAdd()">Add</button>
 <button (click)="onLoad()">Load</button>
 <ul>
   <li *ngFor="let c of courses; trackBy : trackCourse">{{c.name}}
     <button (click)="onChange(c)">change</button>
     <button (click)="onRemove(c)">remove</button>
   </li>
-</ul>
+</ul> -->
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ------------------------------ ng class ------------------------------- -->
+
+<span class="toto" [class.active]="isSelected" [class.inactive]="!isSelected">Toto</span>
+
+<span class="tata" [ngClass]="{
+  'active': isSelected,
+  'inactive': !isSelected
+}" (click)="isSelected = !isSelected">Tata</span>
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ------------------------------ ng style ------------------------------- -->
+
+<span [style.backgroundColor]="isActive? 'blue' : 'red'" [style.color]="isActive? 'white':'yellow'">Titi
+</span>
+
+<span class="tutu" [ngStyle]="{
+  'background-color': isActive? 'blue' : 'red',
+  'color' : isActive? 'white': 'yellow'
+}" (click)="isActive = !isActive">
+  Tutu
+</span>
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- -------------------------- custom directive --------------------------- -->
+
+<input type="text" [format]="'uppercase'">

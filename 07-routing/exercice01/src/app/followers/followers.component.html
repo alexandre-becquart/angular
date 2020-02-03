@@ -1,0 +1,12 @@
+<div class="media" *ngFor="let f of followers">
+  <img class="mr-3" [src]="f.avatar_url" [alt]="f.login">
+  <div class="media-body">
+    <h5 class="mt-0"><a [routerLink]="['/followers',f.login, f.id]"
+        [queryParams]="{img:f.avatar_url, name:'f.login', url:'f.followers_url'}">{{f.login}}</a></h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+    vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+    congue felis in faucibus.
+    <h6><a [routerLink]="['/followers',f.login, f.id]"
+        [queryParams]="{img:f.avatar_url, name:'f.login', url:'f.followers_url'}">{{f.followers_url}}</a></h6>
+  </div>
+</div>
